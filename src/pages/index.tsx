@@ -1,13 +1,14 @@
 import React from 'react'
-import Head from 'next/head'
+
+import { Banner } from '../components/Banner'
+import { Container } from '../styles/home'
+
 function Home() {
   return (
-    <div>
-      <Head>
-        <title>Fila do Covid</title>
-      </Head>
-      <h1>olar</h1>
-    </div>
+    <Container>
+      <Banner />
+      <h1>a</h1>
+    </Container>
   )
 }
 

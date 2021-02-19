@@ -8,9 +8,16 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
 
+  html,
   body {
-    color: #FFF;
-    background: #0e0e0e;
+    font-family: 'Poppins', sans-serif;
+    color: ${({ theme }) => theme.colors.primary};
+    background: ${({ theme }) => theme.colors.background};
     -webkit-font-smoothing: antialiased;
+  }
+
+  img {
+    max-width: 100%;
+    display: block;
   }
 `
