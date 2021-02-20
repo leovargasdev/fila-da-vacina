@@ -13,7 +13,7 @@ function Home() {
     setEtapa(state => state + 1)
     setTimeout(() => {
       setEtapaV(state => state + 1)
-    }, 400)
+    }, 300)
   }
 
   const optionsQuestionOne = [

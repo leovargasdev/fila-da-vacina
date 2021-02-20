@@ -11,6 +11,4 @@ export const Container = styled.main`
   min-height: 100vh;
   margin: 0 auto;
   padding: 70px 0;
-
-  overflow-x: hidden;
 `

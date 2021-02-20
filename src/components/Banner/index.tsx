@@ -8,7 +8,8 @@ export const Banner = () => (
   <Container>
     <Content>
       <p>Qual é o seu lugar na</p>
-      <h1>FILA DA VACINA?</h1>
+      <p>sadasda</p>
+      {/* <h1>FILA DA VACINA?</h1> */}
     </Content>
 
     <IconPeopleCovid />

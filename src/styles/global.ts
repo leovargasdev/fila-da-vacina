@@ -14,6 +14,7 @@ export default createGlobalStyle`
     color: ${({ theme }) => theme.colors.primary};
     background: ${({ theme }) => theme.colors.background};
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
   img {

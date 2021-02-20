@@ -44,10 +44,10 @@ export const Container = styled.section<{ active: boolean }>`
   ${props =>
     props.active
       ? css`
-          animation: ${visibleContainer} 0.4s ease-in-out;
+          animation: ${visibleContainer} 0.3s ease-in-out;
         `
       : css`
-          animation: ${hiddenContainer} 0.4s ease-in-out;
+          animation: ${hiddenContainer} 0.3s ease-in-out;
         `}
 
   animation-fill-mode: forwards;
