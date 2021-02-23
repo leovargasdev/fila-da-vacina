@@ -41,17 +41,59 @@ export const Content = styled.div`
   p {
     font-size: 50px;
     color: ${({ theme }) => theme.colors.white};
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
+    /* -webkit-backface-visibility: hidden;
+    backface-visibility: hidden; */
 
-    & + p {
+    /* & + p {
       transform: rotateY(180deg);
-    }
+    } */
   }
 
   h1 {
     font-size: 60px;
     line-height: 50px;
+    font-weight: 800;
+    color: ${({ theme }) => theme.colors.pink};
+  }
+`
+
+export const ContentTwo = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* justify-content: space-between; */
+  padding: 2em 0 2em 2em;
+  width: 70%;
+
+  p {
+    font-size: 16px;
+    color: ${({ theme }) => theme.colors.white};
+
+    strong {
+      font-size: 22px;
+      padding-left: 5px;
+      color: ${({ theme }) => theme.colors.yellow};
+      text-transform: uppercase;
+    }
+  }
+`
+
+export const ContentTitle = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 1em;
+
+  p {
+    font-size: 24px;
+    color: ${({ theme }) => theme.colors.white};
+  }
+
+  h1 {
+    font-size: 30px;
+    line-height: 20px;
     font-weight: 800;
     color: ${({ theme }) => theme.colors.pink};
   }
