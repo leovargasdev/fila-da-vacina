@@ -1,33 +1,27 @@
 import React from 'react'
 
 import { Container, Content, Button } from './styles'
+import { QuestionProps } from '../../utils/questions'
 
-interface OptionProps {
-  id: string
-  name: string
-}
-
-interface QuestionProps {
+interface QuestionComponentProps {
   active: boolean
-  title: string
-  options: OptionProps[]
-  selectOption: (value: string) => void
+  question: QuestionProps
+  selectOption: (value: string | number | boolean) => void
 }
 
 export const Question = ({
   active,
-  title,
-  options,
+  question,
   selectOption
-}: QuestionProps) => (
+}: QuestionComponentProps) => (
   <Container active={active}>
-    <p>{title}</p>
+    <p>{question.title}</p>
     <Content>
-      {options.map(option => (
+      {question.options.map((option, index) => (
         <Button
-          key={option.id}
+          key={index}
           type="button"
-          onClick={() => selectOption(option.id)}
+          onClick={() => selectOption(option.value)}
         >
           {option.name}
         </Button>

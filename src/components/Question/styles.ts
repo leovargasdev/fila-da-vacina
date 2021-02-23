@@ -2,7 +2,7 @@ import styled, { css, keyframes } from 'styled-components'
 
 const visibleContainer = keyframes`
   from {
-    transform: translateX(-500px);
+    transform: translateX(500px);
     opacity: 0;
   }
 
@@ -21,7 +21,7 @@ const hiddenContainer = keyframes`
   to {
     display: none;
     visibility: hidden;
-    transform: translateX(500px);
+    transform: translateX(-500px);
     opacity: 0;
   }
 `

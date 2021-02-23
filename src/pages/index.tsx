@@ -1,95 +1,79 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { Banner } from '../components/Banner'
 import { Question } from '../components/Question'
+import { Timeline } from '../components/Timeline'
+
 import { Container } from '../styles/home'
 
-function Home() {
-  const [etapa, setEtapa] = useState(0)
-  const [etapaV, setEtapaV] = useState(0)
+import { questions } from '../utils/questions'
+import { handleUserPhase } from '../utils/functions'
 
-  const handleEtapa = ne => {
-    console.log(ne)
-    setEtapa(state => state + 1)
+function Home() {
+  const [stage, setStage] = useState(0)
+  const [stageVisible, setStageVisible] = useState(0)
+
+  const [age, setAge] = useState(0)
+  const [office, setOffice] = useState('')
+  const [comorbidity, setComorbidity] = useState(false)
+  const [group, setGroup] = useState('')
+  const [pregnant, setPregnant] = useState(false)
+
+  const [userPhase, setUserPhase] = useState('')
+
+  const handleNextStage = () => {
+    setStage(state => state + 1)
     setTimeout(() => {
-      setEtapaV(state => state + 1)
+      setStageVisible(state => state + 1)
     }, 300)
   }
 
-  const optionsQuestionOne = [
-    { id: '18', name: 'Menos 18' },
-    { id: '25', name: '18 a 59' },
-    { id: '65', name: '60 a 74' },
-    { id: '76', name: 'Mais de 75' }
-  ]
+  const handleQuestionValue = questionValue => {
+    switch (stage) {
+      case 0:
+        setAge(questionValue)
+        break
+      case 1:
+        setOffice(questionValue)
+        break
+      case 2:
+        setComorbidity(questionValue)
+        break
+      case 3:
+        setGroup(questionValue)
+        break
+      case 4:
+        setPregnant(questionValue)
+        break
+      default:
+        break
+    }
+    handleNextStage()
+  }
 
-  const optionsQuestionTwo = [
-    { id: 'saude', name: 'Saúde' },
-    { id: 'educacao', name: 'Educação' },
-    { id: 'seguranca', name: 'Segurança' },
-    { id: 'outra', name: 'Outra' }
-  ]
-
-  const optionsQuestionThree = [
-    { id: 'sim', name: 'Sim' },
-    { id: 'nao', name: 'Não' }
-  ]
-
-  const optionsQuestionFour = [
-    { id: 'indigenas', name: 'Indígenas' },
-    { id: 'quilombolas', name: 'Quilombolas' },
-    { id: 'ribeirinhos', name: 'Ribeirinhos' },
-    { id: 'nao', name: 'Não' }
-  ]
-
-  const optionsQuestionFive = [
-    { id: 'sim', name: 'Sim' },
-    { id: 'nao', name: 'Não' }
-  ]
+  useEffect(() => {
+    if (stage === 5) {
+      setUserPhase(
+        handleUserPhase({ age, office, comorbidity, group, pregnant })
+      )
+    }
+  }, [stage])
 
   return (
     <Container>
       <Banner />
-      {etapaV === 0 && (
-        <Question
-          active={etapa === 0}
-          title="Qual é a sua idade?"
-          options={optionsQuestionOne}
-          selectOption={handleEtapa}
-        />
-      )}
-      {etapaV === 1 && (
-        <Question
-          active={etapa === 1}
-          title="Qual sua área de atuação?"
-          options={optionsQuestionTwo}
-          selectOption={handleEtapa}
-        />
-      )}
-      {etapaV === 2 && (
-        <Question
-          active={etapa === 2}
-          title="Você tem alguma comobidade que agrave a Covid-19?"
-          options={optionsQuestionThree}
-          selectOption={handleEtapa}
-        />
-      )}
-      {etapaV === 3 && (
-        <Question
-          active={etapa === 3}
-          title="Você pertence a algum destes grupos?"
-          options={optionsQuestionFour}
-          selectOption={handleEtapa}
-        />
-      )}
-      {etapaV === 4 && (
-        <Question
-          active={etapa === 4}
-          title="Você é gestante?"
-          options={optionsQuestionFive}
-          selectOption={handleEtapa}
-        />
-      )}
+      <Timeline activePhase={4} />
+      {/* {questions.map(
+        question =>
+          stageVisible === question.id && (
+            <Question
+              key={question.id}
+              question={question}
+              active={stage === question.id}
+              selectOption={handleQuestionValue}
+            />
+          )
+      )} */}
     </Container>
   )
 }
