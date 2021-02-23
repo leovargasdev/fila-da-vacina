@@ -8,7 +8,7 @@ export const Container = styled.header`
 
   width: 100%;
   height: 300px;
-  perspective: 1000px;
+  /* perspective: 1000px; */
   border-radius: 10px;
 
   svg {
@@ -17,11 +17,11 @@ export const Container = styled.header`
     right: 2em;
   }
 
-  &:hover {
+  /* &:hover {
     div {
       transform: rotateX(180deg);
     }
-  }
+  } */
 
   box-shadow: 2px 4px 14px rgba(0, 0, 0, 0.25);
 `
@@ -32,8 +32,8 @@ export const Content = styled.div`
   align-items: center;
   justify-content: center;
 
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
+  /* transition: transform 0.6s; */
+  /* transform-style: preserve-3d; */
 
   /* background: blue; */
   width: 70%;
