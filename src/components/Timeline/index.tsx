@@ -1,5 +1,7 @@
 import React from 'react'
-import { FaCheck, FaClock } from 'react-icons/fa'
+import { FaCheck, FaClock, FaChevronDown } from 'react-icons/fa'
+
+import { LineProgress } from './LineProgress'
 
 import {
   Container,
@@ -59,7 +61,9 @@ export const Timeline = ({ activePhase }: TimelineProps) => {
   ]
 
   return (
-    <Container activePhase={activePhase - 1}>
+    <Container>
+      <LineProgress activePhase={activePhase} phases={phases} />
+
       {phases.map(phase => (
         <Box key={phase.id} phaseNumber={phase.id} right={phase.id % 2 === 0}>
           <BoxIcon

@@ -34,51 +34,12 @@ const visibleBoxRight = keyframes`
   }
 `
 
-const lineContainer = keyframes`
-  from {
-    max-height: 0%;
-  }
-
-  to {
-    max-height: 100%;
-  }
-`
-
-export const Container = styled.section<{ activePhase: number }>`
+export const Container = styled.section`
   display: flex;
   flex-direction: column;
   align-items: stretch;
   position: relative;
   margin-top: 4em;
-
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    margin: 0 auto;
-
-    width: 5px;
-    height: ${props => props.activePhase * 25}%;
-    background: ${({ theme }) => theme.colors.green};
-    animation: ${lineContainer} 5s ease-in-out;
-  }
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    margin: 0 auto;
-
-    width: 5px;
-    height: 100%;
-    background: ${({ theme }) => theme.colors.silver};
-
-    animation: ${lineContainer} 5s ease-in-out;
-  }
 `
 
 export const Box = styled.div<{ right: boolean; phaseNumber: number }>`
@@ -161,7 +122,7 @@ export const BoxContent = styled.div<BoxContentProps>`
 
   border-radius: 8px;
   background: ${({ theme }) => theme.colors.white};
-  box-shadow: 2px 2px 6px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
   border: 1px solid ${({ theme }) => theme.colors.silver};
 
   ${props =>
