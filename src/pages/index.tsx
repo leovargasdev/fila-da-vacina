@@ -3,11 +3,14 @@ import React, { useEffect, useState } from 'react'
 import { Banner } from '../components/Banner'
 import { Question } from '../components/Question'
 import { Timeline } from '../components/Timeline'
+import { Loading } from '../components/Loading'
 
 import { Container } from '../styles/home'
 
 import { questions } from '../utils/questions'
 import { handleUserPhase } from '../utils/functions'
+
+import IconSyringe from '../assets/merda-3.svg'
 
 function Home() {
   const [stage, setStage] = useState(0)
@@ -61,6 +64,7 @@ function Home() {
 
   return (
     <Container>
+      {/* <Loading /> */}
       <Banner />
       <Timeline activePhase={4} />
       {/* {questions.map(
