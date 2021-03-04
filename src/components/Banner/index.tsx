@@ -1,16 +1,14 @@
 import React from 'react'
 
-import IconPeopleCovid from '../../assets/people.svg'
-
 import { Container, Content, ContentTwo, ContentTitle } from './styles'
 
 export const Banner = () => (
   <Container>
-    {/* <Content>
+    <Content>
       <p>Qual é o seu lugar na</p>
       <h1>FILA DA VACINA?</h1>
-    </Content> */}
-    <ContentTwo>
+    </Content>
+    {/* <ContentTwo>
       <ContentTitle>
         <p>Qual é o seu lugar na</p>
         <h1>FILA DA VACINA?</h1>
@@ -30,7 +28,7 @@ export const Banner = () => (
       <p>
         5. Você é gestante?<strong>Não</strong>
       </p>
-    </ContentTwo>
-    <IconPeopleCovid />
+    </ContentTwo> */}
+    <img src="/people.svg" alt="Icone banner" />
   </Container>
 )

@@ -10,8 +10,6 @@ import { Container } from '../styles/home'
 import { questions } from '../utils/questions'
 import { handleUserPhase } from '../utils/functions'
 
-import IconSyringe from '../assets/merda-3.svg'
-
 function Home() {
   const [stage, setStage] = useState(0)
   const [stageVisible, setStageVisible] = useState(0)
@@ -22,7 +20,8 @@ function Home() {
   const [group, setGroup] = useState('')
   const [pregnant, setPregnant] = useState(false)
 
-  const [userPhase, setUserPhase] = useState('')
+  const [phaseUser, setPhaseUser] = useState(null)
+  const [loading, setLoading] = useState(false)
 
   const handleNextStage = () => {
     setStage(state => state + 1)
@@ -46,6 +45,7 @@ function Home() {
         setGroup(questionValue)
         break
       case 4:
+        setLoading(true)
         setPregnant(questionValue)
         break
       default:
@@ -56,18 +56,33 @@ function Home() {
 
   useEffect(() => {
     if (stage === 5) {
-      setUserPhase(
-        handleUserPhase({ age, office, comorbidity, group, pregnant })
-      )
+      const phaseUserData = handleUserPhase({
+        age,
+        office,
+        comorbidity,
+        group,
+        pregnant
+      })
+
+      setTimeout(() => {
+        setPhaseUser(phaseUserData)
+        setLoading(false)
+      }, 1000)
     }
   }, [stage])
 
   return (
     <Container>
-      {/* <Loading /> */}
+      {loading && <Loading />}
+
+      {/* ==== Box superior ==== */}
       <Banner />
-      <Timeline activePhase={4} />
-      {/* {questions.map(
+
+      {/* ==== Timeline com as fases de vacinação ==== */}
+      {phaseUser && <Timeline activePhase={phaseUser.value} />}
+
+      {/* ==== Lista das Questões ==== */}
+      {questions.map(
         question =>
           stageVisible === question.id && (
             <Question
@@ -77,7 +92,7 @@ function Home() {
               selectOption={handleQuestionValue}
             />
           )
-      )} */}
+      )}
     </Container>
   )
 }

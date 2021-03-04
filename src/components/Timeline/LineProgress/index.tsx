@@ -1,30 +1,31 @@
 import React from 'react'
 import { FaCheck, FaClock, FaChevronDown } from 'react-icons/fa'
 
-import { Container, LineProgressIcon } from './styles'
+import { Container, Phase, PhaseActive, PhaseIcon, PhaseName } from './styles'
+
+import { phases } from '../../../utils/phases'
 
 interface LineProgressProps {
   activePhase: number
-  phases: any
 }
 
-export const LineProgress = ({ activePhase, phases }: LineProgressProps) => (
+export const LineProgress = ({ activePhase }: LineProgressProps) => (
   <Container activePhase={activePhase - 1}>
     {phases.map(phase => (
-      <LineProgressIcon
-        key={phase.id}
-        active={phase.id === activePhase}
-        finished={phase.id < activePhase}
-      >
+      <Phase key={phase.id}>
         {phase.id === activePhase && (
-          <span>
-            você esta aqui
-            <FaChevronDown />
-          </span>
+          <PhaseActive>
+            você está aqui <FaChevronDown />
+          </PhaseActive>
         )}
-        {phase.id <= activePhase ? <FaCheck /> : <FaClock />}
-        {/* <p>{phase.tag}</p> */}
-      </LineProgressIcon>
+        <PhaseIcon
+          active={phase.id === activePhase}
+          finished={phase.id < activePhase}
+        >
+          {phase.id <= activePhase ? <FaCheck /> : <FaClock />}
+        </PhaseIcon>
+        <PhaseName>{phase.tag}</PhaseName>
+      </Phase>
     ))}
   </Container>
 )

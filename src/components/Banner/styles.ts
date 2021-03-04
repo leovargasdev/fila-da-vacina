@@ -11,6 +11,7 @@ export const Container = styled.header`
   /* perspective: 1000px; */
   border-radius: 10px;
 
+  img,
   svg {
     position: absolute;
     bottom: 0;

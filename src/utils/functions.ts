@@ -14,36 +14,36 @@ export const handleUserPhase = ({
   pregnant
 }: handleUserPhaseProps) => {
   if (office === 'saude') {
-    return 'fase 1'
+    return { name: 'fase 1', value: 1 }
   }
 
   if (['ribeirinhos', 'indigenas'].includes(group)) {
-    return 'fase 1'
+    return { name: 'fase 1', value: 1 }
   }
 
   if (group === 'quilombolas') {
-    return 'Grupo prioritário'
+    return { name: 'Grupo prioritário', value: 4 }
   }
 
   if (age > 75 && ['educacao', 'seguranca'].includes(office)) {
-    return 'fase 1'
+    return { name: 'fase 1', value: 1 }
   }
 
   if (group === 'quilombolas' || ['educacao', 'seguranca'].includes(office)) {
-    return 'Grupo prioritário'
+    return { name: 'Grupo prioritário', value: 4 }
   }
 
   if (office === 'outra' && age < 59 && !comorbidity && group === 'nao') {
-    return 'Não prioritário'
+    return { name: 'Não prioritário', value: 5 }
   }
 
   if (office === 'outra' && age < 59 && comorbidity && group === 'nao') {
-    return 'Fase 3'
+    return { name: 'Fase 3', value: 3 }
   }
 
   if (office === 'outra' && age > 60 && group === 'nao') {
-    return 'Fase 2'
+    return { name: 'Fase 2', value: 2 }
   }
 
-  return 'nao mapeada'
+  return { name: 'nao mapeada', value: -1 }
 }
