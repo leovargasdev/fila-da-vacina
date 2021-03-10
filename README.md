@@ -1,34 +1,76 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">Fila do Covid</h1>
 
-## Getting Started
+<p align="center">
+  Descubra qual é o seu lugar na fila da vacinação da covid-19
+</p>
 
-First, run the development server:
+<p align="center">
+  <img alt="Print do layout da aplicação" width="100%" src="./.github/screenshot.png" />
+</p>
+
+## 💻 Projeto
+
+Esse projeto tem como objetivo apresentar uma forma fácil e intuitiva a fila do covid.
+
+
+### Conceitos abordados
+
+- Responsividade
+
+- Componentização no React.
+
+- Efeitos/Animações no CSS.
+
+- Uso de flexbox para alinhar e ajustar elementos na página.
+
+## :rocket: Tecnologias
+
+-  [Next.js](https://nextjs.org/)
+-  [TypeScript](https://www.typescriptlang.org/)
+-  [Styled-components](https://www.styled-components.com/)
+-  [React-Icons](https://react-icons.netlify.com/)
+-  [Vercel](https://vercel.com/)
+
+## 📥 Instalação e execução
+
+Faça um clone desse repositório e acesse o diretório.
 
 ```bash
-npm run dev
-# or
-yarn dev
+$ git clone git@github.com:LeeonardoVargas/fila-covid.git && cd fila-covid
+
+# Instalando as dependências
+$ yarn
+
+# Executanto aplicação
+$ yarn start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## :muscle: Contribuir
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Faça o `fork` e clone o projeto a partir do seu usuário.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+```bash
+# Clonando projeto
+$ git clone https://github.com/SEU-NOME-DE-USUARIO/fila-covid.git
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+# Criando um branch
+$ git branch minha-alteracao
 
-## Learn More
+# Acessando o novo branch
+$ git checkout -b minha-alteracao
 
-To learn more about Next.js, take a look at the following resources:
+# Adicionando os arquivos alterados
+$ git add .
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Criando commit e a mensagem
+$ git commit -m "Corrigindo...."
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+# Enviando alterações para o brach
+$ git push origin minha-alteracao
+```
 
-## Deploy on Vercel
+Você deve navegar até o seu repositório onde fez o fork e clicar no botão *New pull request* no lado esquerdo da página. Depois que o merge da sua pull request for feito, você pode deletar a sua branch.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📝 Licença
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
