@@ -1,5 +1,5 @@
-const withImages = require('next-images')
-
-module.exports = withImages({
-  esModule: true,
-})
+module.exports = {
+	env: {
+		GOOGLE_ANALYTICS: process.env.GOOGLE_ANALYTICS
+	},
+};
