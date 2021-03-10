@@ -1,4 +1,5 @@
 import styled, { css, keyframes } from 'styled-components'
+import media from 'styled-media-query'
 
 interface BoxIconProps {
   active: boolean
@@ -38,18 +39,21 @@ export const Container = styled.section`
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  position: relative;
-  margin-top: 4em;
 `
 
 export const Box = styled.div<{ right: boolean; phaseNumber: number }>`
   display: block;
   position: relative;
-  z-index: 2;
 
   & + div {
-    margin-top: 8em;
+    margin-top: 8rem;
   }
+
+  ${media.lessThan('medium')`
+    & + div {
+      margin-top: 4rem;
+    }
+  `}
 
   ${props =>
     props.right
@@ -75,20 +79,11 @@ export const BoxIcon = styled.div<BoxIconProps>`
 
   background: ${({ theme }) => theme.colors.white};
 
-  ${props =>
-    props.finished &&
-    css`
-      background: ${({ theme }) => theme.colors.green};
-    `}
-
-  ${props =>
-    !props.finished &&
-    css`
-      border: 1px solid ${({ theme }) => theme.colors.silver};
-    `}
+  border-width: 2px;
+  border-style: solid;
+  border-color: ${({ theme }) => theme.colors.silver};
 
   margin: 0 auto;
-
   z-index: 5;
 
   svg {
@@ -96,13 +91,51 @@ export const BoxIcon = styled.div<BoxIconProps>`
     width: 30px;
     height: auto;
     color: ${({ theme }) => theme.colors.silver};
-
-    ${props =>
-      props.finished &&
-      css`
-        color: ${({ theme }) => theme.colors.white};
-      `}
   }
+
+  ${media.lessThan('medium')`
+    top: -20px;
+
+    margin: auto 30px auto auto;
+
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+
+    svg {
+      width: 20px;
+    }
+  `}
+
+  ${props =>
+    props.active &&
+    css`
+      ${media.lessThan('medium')`
+        margin-right: -10px;
+        bottom: 0;
+      `}
+    `}
+
+  ${props =>
+    props.finished &&
+    css`
+      border-color: transparent;
+      background: ${({ theme }) => theme.colors.green};
+
+      svg {
+        color: ${({ theme }) => theme.colors.white};
+      }
+    `}
+
+  ${props =>
+    props.active &&
+    css`
+      border-color: ${({ theme }) => theme.colors.green};
+
+      svg {
+        color: ${({ theme }) => theme.colors.green};
+      }
+    `}
 `
 
 export const BoxContent = styled.div<BoxContentProps>`
@@ -114,15 +147,15 @@ export const BoxContent = styled.div<BoxContentProps>`
 
   font-family: 'Montserrat', sans-serif;
 
-  padding: 2em 1.5em;
+  padding: 2rem 1.5rem;
   position: relative;
   max-width: 763px;
   width: 100%;
   height: auto;
 
-  border-radius: 8px;
+  border-radius: 12px;
   background: ${({ theme }) => theme.colors.white};
-  box-shadow: 0 0 60px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.05);
   border: 1px solid ${({ theme }) => theme.colors.silver};
 
   ${props =>
@@ -133,29 +166,52 @@ export const BoxContent = styled.div<BoxContentProps>`
 
   h4 {
     font-weight: bold;
-    font-size: 20px;
-    line-height: 140%;
-
-    color: ${({ theme }) => theme.colors.primary};
+    font-size: 1.25rem;
+    line-height: 1.4;
   }
 
   h6 {
     font-style: italic;
     font-weight: 300;
-    font-size: 16px;
-    line-height: 140%;
+    font-size: 1rem;
+    line-height: 1.4;
   }
 
   p {
-    margin-top: 1em;
-
-    text-align: ${props => (props.right ? 'right' : 'left')};
     font-weight: 300;
-    font-size: 18px;
-    line-height: 140%;
+    line-height: 1.4;
+    font-size: 1.125rem;
     color: ${({ theme }) => theme.colors.primary};
+    text-align: ${props => (props.right ? 'right' : 'left')};
+
+    margin-top: 1rem;
     opacity: 0.8;
   }
+
+  ${media.lessThan('medium')`
+    padding: 1rem 1.5rem;
+    align-items: flex-start;
+
+    h4 {
+      margin-top: 1rem;
+
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    h6 {
+      text-align: left;
+      font-size: 0.825rem;
+    }
+
+    p {
+      line-height: 1.4;
+      font-size: 1rem;
+      text-align: left;
+
+      margin-top: 0.5rem;
+    }
+  `}
 `
 
 export const BoxTag = styled.span`
@@ -171,10 +227,15 @@ export const BoxTag = styled.span`
   background: ${({ theme }) => theme.colors.pink};
   border-radius: 2px;
 
-  font-size: 14px;
-  text-transform: uppercase;
   font-weight: 500;
+  font-size: 0.825rem;
+  text-transform: uppercase;
   color: ${({ theme }) => theme.colors.white};
+
+  ${media.lessThan('medium')`
+    width: 160px;
+    font-size: 0.75rem;
+  `}
 `
 
 export const BoxTagActivePhase = styled.span<{ right: boolean }>`
@@ -205,7 +266,11 @@ export const BoxTagActivePhase = styled.span<{ right: boolean }>`
   border-radius: 2px;
 
   font-weight: 500;
-  font-size: 12px;
-  line-height: 140%;
+  font-size: 0.725rem;
   color: ${({ theme }) => theme.colors.white};
+
+  ${media.lessThan('medium')`
+    right: 0;
+    left: 200px;
+  `}
 `

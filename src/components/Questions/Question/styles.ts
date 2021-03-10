@@ -1,4 +1,5 @@
 import styled, { css, keyframes } from 'styled-components'
+import media from 'styled-media-query'
 
 const visibleContainer = keyframes`
   from {
@@ -41,6 +42,14 @@ export const Container = styled.section<{ active: boolean }>`
     font-size: 40px;
   }
 
+  ${media.lessThan('medium')`
+    width: 100%;
+    /* margin: 0; */
+    p {
+      font-size: 22px;
+    }
+  `}
+
   ${props =>
     props.active
       ? css`
@@ -60,6 +69,13 @@ export const Content = styled.div`
   gap: 1.5em 2em;
 
   margin-top: 4em;
+
+  ${media.lessThan('medium')`
+    grid-template-columns: 1fr;
+    gap: 1em;
+
+    margin-top: 1em;
+  `}
 `
 
 export const Button = styled.button`
@@ -74,6 +90,11 @@ export const Button = styled.button`
   border-radius: 8px;
   border: 2px solid transparent;
 
+  ${media.lessThan('medium')`
+    font-size: 20px;
+  `}
+
+  outline-color: ${({ theme }) => theme.colors.pink};
   transition: all 0.3s ease;
 
   &:hover {

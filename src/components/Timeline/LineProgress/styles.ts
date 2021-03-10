@@ -1,4 +1,5 @@
 import styled, { css, keyframes } from 'styled-components'
+import media from 'styled-media-query'
 
 interface PhaseIconProps {
   active: boolean
@@ -35,7 +36,7 @@ export const Container = styled.div<{ activePhase: number }>`
 
   position: relative;
 
-  margin: 4rem 0 6rem;
+  margin: 8rem 0 6rem;
 
   &::after,
   &::before {
@@ -62,6 +63,15 @@ export const Container = styled.div<{ activePhase: number }>`
     width: 100%;
     background: ${({ theme }) => theme.colors.silver};
   }
+
+  ${media.lessThan('medium')`
+    margin: 4rem 0 3rem;
+
+    &::after,
+    &::before {
+      height: 2px;
+    }
+  `}
 `
 
 export const Phase = styled.div`
@@ -88,6 +98,10 @@ export const Phase = styled.div`
   &:nth-child(5) {
     animation: ${showPhase} 5.5s ease;
   }
+
+  ${media.lessThan('medium')`
+    flex: auto;
+  `}
 `
 
 export const PhaseActive = styled.span`
@@ -98,9 +112,9 @@ export const PhaseActive = styled.span`
   position: absolute;
   top: -60px;
 
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
+  font-size: 0.8rem;
   line-height: 0.8;
+  font-family: 'Montserrat', sans-serif;
   color: ${({ theme }) => theme.colors.green};
 
   svg {
@@ -108,6 +122,17 @@ export const PhaseActive = styled.span`
     height: auto;
     color: ${({ theme }) => theme.colors.green};
   }
+
+  ${media.lessThan('medium')`
+    top: -44px;
+
+    font-size: 0.5rem;
+    text-align: center;
+
+    svg {
+      width: 14px;
+    }
+  `}
 `
 
 export const PhaseIcon = styled.div<PhaseIconProps>`
@@ -122,8 +147,8 @@ export const PhaseIcon = styled.div<PhaseIconProps>`
 
   background: ${({ theme }) => theme.colors.background};
 
-  border-style: solid;
   border-width: 2px;
+  border-style: solid;
   border-color: ${({ theme }) => theme.colors.silver};
 
   svg {
@@ -132,6 +157,18 @@ export const PhaseIcon = styled.div<PhaseIconProps>`
     height: auto;
     color: ${({ theme }) => theme.colors.silver};
   }
+
+  ${media.lessThan('medium')`
+    top: -15px;
+
+    width: 30px;
+    height: 30px;
+    border-radius: 20px;
+
+    svg {
+      width: 15px;
+    }
+  `}
 
   ${props =>
     props.finished &&
@@ -158,8 +195,13 @@ export const PhaseIcon = styled.div<PhaseIconProps>`
 export const PhaseName = styled.h5`
   margin-top: 2.5rem;
 
-  color: ${({ theme }) => theme.colors.secondary};
-  font-size: 18px;
+  color: ${({ theme }) => theme.colors.tertiary};
+  font-size: 1rem;
   font-weight: 400;
   font-family: 'Montserrat', sans-serif;
+
+  ${media.lessThan('medium')`
+    margin-top: 1.25rem;
+    font-size: 0.5rem;
+  `}
 `

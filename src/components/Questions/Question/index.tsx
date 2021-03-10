@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Container, Content, Button } from './styles'
-import { QuestionProps } from '../../utils/questions'
+import { QuestionProps } from '../../../utils/questions'
 
 interface QuestionComponentProps {
   active: boolean
