@@ -57,6 +57,7 @@ export const Content = styled.div`
 
   p {
     font-size: 3rem;
+    line-height: 1;
     color: ${({ theme }) => theme.colors.white};
   }
 
@@ -76,7 +77,6 @@ export const Content = styled.div`
 
     h1 {
       font-size: 1.25rem;
-      line-height: 0.5;
     }
   `}
 `

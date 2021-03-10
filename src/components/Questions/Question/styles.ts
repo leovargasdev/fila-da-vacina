@@ -39,14 +39,13 @@ export const Container = styled.section<{ active: boolean }>`
   p {
     text-align: center;
     font-weight: 500;
-    font-size: 40px;
+    font-size: 2.5rem;
   }
 
   ${media.lessThan('medium')`
     width: 100%;
-    /* margin: 0; */
     p {
-      font-size: 22px;
+      font-size: 1.25rem;
     }
   `}
 
@@ -72,26 +71,26 @@ export const Content = styled.div`
 
   ${media.lessThan('medium')`
     grid-template-columns: 1fr;
-    gap: 1em;
+    gap: 1.25rem;
 
-    margin-top: 1em;
+    margin-top: 2em;
   `}
 `
 
 export const Button = styled.button`
-  font-size: 25px;
+  font-size: 1.5rem;
   font-weight: 500;
   letter-spacing: -0.03em;
 
   padding: 0.5em 0;
   background: ${({ theme }) => theme.colors.white};
-  box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.05);
+  box-shadow: 1px 1px 4px 1px rgba(0, 0, 0, 0.05);
 
   border-radius: 8px;
   border: 2px solid transparent;
 
   ${media.lessThan('medium')`
-    font-size: 20px;
+    font-size: 1.125rem;
   `}
 
   outline-color: ${({ theme }) => theme.colors.pink};
