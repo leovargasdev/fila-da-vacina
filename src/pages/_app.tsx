@@ -10,14 +10,18 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <ThemeProvider theme={theme}>
       <Head>
-        <title>Fila do Covid</title>
-        <meta property="og:title" content="Fila do Covid" key="title" />
-        <meta property="og:site_name" content="Fila do Covid" />
+        <title>Fila da Vacina | Covid-19</title>
+        <meta
+          property="og:title"
+          content="Fila da Vacina do Covid-19"
+          key="title"
+        />
+        <meta property="og:site_name" content="Fila da Vacina do Covid-19" />
         <meta property="og:type" content="website" key="type" />
         <meta property="og:locale" content="pt_BR" key="locale" />
         <meta
           property="og:url"
-          content="https://www.meusite.com.br/"
+          content="https://fila-covid.vercel.app/"
           key="url"
         />
         <meta
@@ -25,10 +29,13 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
           content="Descubra qual é o seu lugar na fila da vacinação da covid-19"
           key="description"
         />
-        {/* <meta property="og:image" content="www.meusite.com.br/imagem.jpg">
-        <meta property="og:image:type" content="image/jpeg">
-        <meta property="og:image:width" content="800">
-        <meta property="og:image:height" content="600"> */}
+        <meta
+          property="og:image"
+          content="https://fila-covid.vercel.app/meta-img.png"
+        />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="1440" />
+        <meta property="og:image:height" content="500" />
       </Head>
       <Component {...pageProps} />
       <GlobalStyle />
