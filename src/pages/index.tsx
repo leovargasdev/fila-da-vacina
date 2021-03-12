@@ -4,6 +4,7 @@ import { Banner } from '../components/Banner'
 import { Loading } from '../components/Loading'
 import { Timeline } from '../components/Timeline'
 import { Questions } from '../components/Questions'
+import { Footer } from '../components/Footer'
 
 import { Container } from '../styles/home'
 
@@ -26,17 +27,20 @@ export default function HomePage() {
   }
 
   return (
-    <Container>
-      {loading && <Loading />}
+    <>
+      <Container>
+        {loading && <Loading />}
 
-      {/* ==== Box superior ==== */}
-      <Banner userData={userData} />
+        {/* ==== Box superior ==== */}
+        <Banner userData={userData} />
 
-      {/* ==== Timeline com as fases de vacinação ==== */}
-      {phaseUser && <Timeline activePhase={phaseUser.value} />}
+        {/* ==== Timeline com as fases de vacinação ==== */}
+        {phaseUser && <Timeline activePhase={phaseUser.value} />}
 
-      {/* ==== Lista das Questões ==== */}
-      <Questions handleDataQuestions={handleDataQuestions} />
-    </Container>
+        {/* ==== Lista das Questões ==== */}
+        <Questions handleDataQuestions={handleDataQuestions} />
+      </Container>
+      <Footer />
+    </>
   )
 }
