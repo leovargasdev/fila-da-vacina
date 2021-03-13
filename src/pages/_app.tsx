@@ -12,6 +12,11 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
       <Head>
         <title>Fila da Vacina | Covid-19</title>
         <meta
+          name="Description"
+          content="Descubra qual é o seu lugar na fila da vacinação da covid-19."
+        />
+
+        <meta
           property="og:title"
           content="Fila da Vacina do Covid-19"
           key="title"
@@ -21,17 +26,17 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <meta property="og:locale" content="pt_BR" key="locale" />
         <meta
           property="og:url"
-          content="https://fila-covid.vercel.app/"
+          content="https://fila-da-vacina.projetochronos.com.br/"
           key="url"
         />
         <meta
           property="og:description"
-          content="Descubra qual é o seu lugar na fila da vacinação da covid-19"
+          content="Descubra qual é o seu lugar na fila da vacinação da covid-19."
           key="description"
         />
         <meta
           property="og:image"
-          content="https://fila-covid.vercel.app/meta-img.png"
+          content="https://fila-da-vacina.projetochronos.com.br/meta-img.png"
         />
         <meta property="og:image:type" content="image/png" />
         <meta property="og:image:width" content="1440" />

@@ -24,7 +24,17 @@ export const Content = styled.div`
   h3 {
     font-size: 1.25rem;
     line-height: 1.5;
-    letter-spacing: 0.5px;
+    letter-spacing: -0.2px;
+    font-weight: 500;
+  }
+
+  p {
+    display: flex;
+    font-weight: 300;
+
+    a {
+      padding-left: 0.25rem;
+    }
   }
 
   img {
@@ -32,17 +42,9 @@ export const Content = styled.div`
     height: auto;
   }
 
-  a {
-    display: flex;
-    align-items: center;
-
-    color: ${({ theme }) => theme.colors.primary};
-
-    img {
-      width: 0.75rem;
-      height: auto;
-
-      margin-right: 0.25rem;
-    }
+  div > a {
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    color: ${({ theme }) => theme.colors.pink};
   }
 `

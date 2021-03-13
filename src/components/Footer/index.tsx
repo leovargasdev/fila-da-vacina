@@ -12,15 +12,17 @@ export const Footer = () => (
       <div>
         <h3>Fonte:</h3>
         <p>
-          Plano Nacional de Vacinação contra a Covid-19 do Ministério da Saúde
+          Plano Nacional de Vacinação contra a Covid-19 do Ministério da Saúde,
+          <a href="plano-nacional-de-vacinacao.pdf" download>
+            baixar documento.
+          </a>
         </p>
         <h3 style={{ marginTop: '1rem' }}>Desenvolvimento:</h3>
         <a
           href="https://www.linkedin.com/in/leonardo-luis-de-vargas/"
           target="_new"
         >
-          <img src="icons/at-solid.svg" />
-          Leonardo Vargas
+          @LeonardoVargas
         </a>
       </div>
     </Content>

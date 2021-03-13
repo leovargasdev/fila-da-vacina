@@ -40,7 +40,7 @@ export default function HomePage() {
         {/* ==== Lista das Questões ==== */}
         <Questions handleDataQuestions={handleDataQuestions} />
       </Container>
-      <Footer />
+      {phaseUser && <Footer />}
     </>
   )
 }
