@@ -153,9 +153,9 @@ export const BoxContent = styled.div<BoxContentProps>`
   width: 100%;
   height: auto;
 
-  border-radius: 12px;
+  border-radius: 0.5rem;
   background: ${({ theme }) => theme.colors.white};
-  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.05);
   border: 1px solid ${({ theme }) => theme.colors.silver};
 
   ${props =>

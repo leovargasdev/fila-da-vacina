@@ -1,50 +1,50 @@
 import styled from 'styled-components'
+import media from 'styled-media-query'
 
 export const Container = styled.footer`
+  width: 96%;
+
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 
-  width: 100%;
-  background: ${({ theme }) => theme.colors.white};
-`
+  margin: 0 auto 2rem;
+  padding: 2rem 0.5rem 0;
+  border-top: 1px solid rgba(194, 194, 194, 0.6);
 
-export const Content = styled.div`
-  display: flex;
-  list-style: none;
-
-  width: 100%;
-  max-width: 1170px;
-
-  padding: 2rem 0 1rem;
-
-  div:last-child {
-    margin-left: 3rem;
-  }
-
-  h3 {
-    font-size: 1.25rem;
-    line-height: 1.5;
-    letter-spacing: -0.2px;
-    font-weight: 500;
-  }
-
-  p {
-    display: flex;
+  h3,
+  h4 {
     font-weight: 300;
 
     a {
-      padding-left: 0.25rem;
+      color: ${({ theme }) => theme.colors.pink};
+
+      font-weight: 500;
+      text-decoration: none;
+
+      padding-left: 0.3rem;
     }
   }
 
-  img {
-    width: 200px;
-    height: auto;
+  h3 {
+    line-height: 1;
   }
 
-  div > a {
-    font-weight: 500;
-    font-family: 'Montserrat', sans-serif;
-    color: ${({ theme }) => theme.colors.pink};
+  h4 {
+    opacity: 0.9;
+    text-align: center;
   }
+
+  ${media.lessThan('medium')`
+    width: 92%;
+
+    h3 {
+      font-size: 1rem;
+      margin-bottom: 0.5rem
+    }
+
+    h4 {
+      line-height: 1;
+    }
+  `}
 `

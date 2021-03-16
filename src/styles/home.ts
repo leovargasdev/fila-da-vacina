@@ -8,7 +8,7 @@ export const Container = styled.main`
 
   /* background: pink; */
   width: 100%;
-  max-width: 1170px;
+  max-width: 1266px;
   min-height: 100vh;
   margin: 0 auto;
   padding: 4rem 0;
