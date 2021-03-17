@@ -42,6 +42,8 @@ export const ButtonReset = styled.button`
   ${media.lessThan('large')`
     font-size: 0.875rem;
 
+    margin-top: 2rem;
+
     width: 80%;
     height: 42px;
   `}

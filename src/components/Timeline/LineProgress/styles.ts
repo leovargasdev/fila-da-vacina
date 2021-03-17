@@ -110,27 +110,27 @@ export const PhaseActive = styled.span`
   align-items: center;
 
   position: absolute;
-  top: -60px;
+  top: -68px;
 
-  font-size: 0.8rem;
+  font-size: 1.25rem;
   line-height: 0.8;
   font-family: 'Montserrat', sans-serif;
   color: ${({ theme }) => theme.colors.green};
 
   svg {
-    width: 18px;
+    width: 1.25rem;
     height: auto;
     color: ${({ theme }) => theme.colors.green};
   }
 
   ${media.lessThan('medium')`
-    top: -44px;
+    top: -45px;
 
-    font-size: 0.5rem;
+    font-size: 0.625rem;
     text-align: center;
 
     svg {
-      width: 14px;
+      width: 0.875rem;
     }
   `}
 `
