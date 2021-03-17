@@ -6,11 +6,14 @@ import { Timeline } from '../components/Timeline'
 import { Questions } from '../components/Questions'
 import { Footer } from '../components/Footer'
 
-import { Container } from '../styles/home'
+import { Container, ButtonReset } from '../styles/home'
 
 import { handleUserPhase } from '../utils/functions'
+import { useRouter } from 'next/router'
 
 export default function HomePage() {
+  const router = useRouter()
+
   const [userData, setUserData] = useState(null)
   const [phaseUser, setPhaseUser] = useState(null)
   const [loading, setLoading] = useState(false)
@@ -26,6 +29,8 @@ export default function HomePage() {
     }, 1000)
   }
 
+  const handleResetQuestions = () => router.reload()
+
   return (
     <>
       <Container>
@@ -39,6 +44,12 @@ export default function HomePage() {
 
         {/* ==== Lista das Questões ==== */}
         <Questions handleDataQuestions={handleDataQuestions} />
+
+        {phaseUser && (
+          <ButtonReset type="button" onClick={handleResetQuestions}>
+            Refazer Questionário
+          </ButtonReset>
+        )}
       </Container>
       {phaseUser && <Footer />}
     </>

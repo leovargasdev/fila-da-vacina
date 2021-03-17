@@ -6,7 +6,6 @@ export const Container = styled.main`
   flex-direction: column;
   align-items: stretch;
 
-  /* background: pink; */
   width: 100%;
   max-width: 1266px;
   min-height: 100vh;
@@ -17,4 +16,31 @@ export const Container = styled.main`
     /* background: blue; */
     padding: 2rem 1rem;
   `}
+`
+
+export const ButtonReset = styled.button`
+  margin: 4rem auto 0;
+
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 1;
+  font-family: 'Montserrat', sans-serif;
+  color: ${({ theme }) => theme.colors.background};
+
+  opacity: 0.8;
+  background: ${({ theme }) => theme.colors.primary};
+
+  width: 50%;
+  height: 48px;
+
+  border: 0;
+  outline: 0;
+  border-radius: 0.5rem;
+
+  transition: all ease 0.4s;
+
+  &:hover {
+    opacity: 1;
+    cursor: pointer;
+  }
 `
