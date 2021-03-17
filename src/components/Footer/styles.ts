@@ -18,21 +18,30 @@ export const Container = styled.footer`
 
     a {
       color: ${({ theme }) => theme.colors.pink};
-
+      opacity: 0.9;
       font-weight: 500;
       text-decoration: none;
 
-      padding-left: 0.3rem;
+      &:hover {
+        opacity: 1;
+      }
     }
   }
 
   h3 {
-    line-height: 1;
+    margin-bottom: 0.25rem;
+
+    a {
+      padding-left: 0.3rem;
+    }
   }
 
   h4 {
     opacity: 0.9;
+    line-height: 1.2;
     text-align: center;
+
+    max-width: 635px;
   }
 
   ${media.lessThan('medium')`
@@ -40,11 +49,10 @@ export const Container = styled.footer`
 
     h3 {
       font-size: 1rem;
-      margin-bottom: 0.5rem
     }
 
     h4 {
-      line-height: 1;
+      font-size: 0.75rem;
     }
   `}
 `

@@ -39,6 +39,13 @@ export const ButtonReset = styled.button`
 
   transition: all ease 0.4s;
 
+  ${media.lessThan('large')`
+    font-size: 0.875rem;
+
+    width: 80%;
+    height: 42px;
+  `}
+
   &:hover {
     opacity: 1;
     cursor: pointer;
