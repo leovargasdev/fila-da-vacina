@@ -32,7 +32,7 @@ export const questions: QuestionProps[] = [
   },
   {
     id: 2,
-    title: 'Você tem alguma comobidade que agrave a Covid-19?',
+    title: 'Você tem alguma comorbidade que agrave a Covid-19?',
     options: [
       { value: true, name: 'Sim' },
       { value: false, name: 'Não' }

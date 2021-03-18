@@ -42,7 +42,7 @@ export const Banner = ({ userData }) => {
             <strong>{userDataFormatted[userData.office]}</strong>
           </p>
           <p>
-            3. Você tem alguma comobidade que agrave a Covid-19?
+            3. Você tem alguma comorbidade que agrave a Covid-19?
             <strong>{userData.comorbidity ? 'Sim' : 'Não'}</strong>
           </p>
           <p>

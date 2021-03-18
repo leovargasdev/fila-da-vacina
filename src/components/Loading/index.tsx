@@ -6,7 +6,7 @@ export const Loading = () => (
   <Container>
     <Content>
       <img
-        src="/icons/syringe.svg"
+        src="syringe.svg"
         alt="Icone de seringa"
         width="auto"
         height="auto"

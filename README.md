@@ -1,8 +1,8 @@
-<h1 align="center">Fila do Covid</h1>
+<h1 align="center">Fila da Vacina</h1>
 
-<p align="center">
+<h3 align="center">
   Descubra qual é o seu lugar na fila da vacinação da covid-19
-</p>
+</h3>
 
 <p align="center">
   <img alt="Print do layout da aplicação" width="100%" src="./.github/screenshot.png" />
@@ -10,18 +10,28 @@
 
 ## 💻 Projeto
 
-Esse projeto tem como objetivo apresentar uma forma fácil e intuitiva a fila do covid.
+Esse projeto tem como objetivo mostrar a posição do usuário na fila de vacinação da covid-19 forma clara e intuitiva, para determinar a posição é necessário responder um questionário, sendo ele:
+
+- Qual é a sua idade?
+- Qual sua área de atuação?
+- Você tem alguma comorbidade que agrave a Covid-19?
+- Você pertence a algum destes grupos?
+- Você é gestante?
+
+Ao responder as questões é apresentado a etapa da campanha que o usuário será vacinado. Tais informações foram retiradas do Plano Nacional de Vacinação contra a Covid-19 do Ministério da Saúde, [link do documento](plano-nacional-de-vacinacao.pdf).
 
 
 ### Conceitos abordados
 
 - Responsividade
 
-- Componentização no React.
+- Componentização no React
 
-- Efeitos/Animações no CSS.
+- Efeitos/Animações no CSS
 
-- Uso de flexbox para alinhar e ajustar elementos na página.
+- Conceitos de flexbox
+
+- Progress Bar
 
 ## :rocket: Tecnologias
 
@@ -36,7 +46,7 @@ Esse projeto tem como objetivo apresentar uma forma fácil e intuitiva a fila do
 Faça um clone desse repositório e acesse o diretório.
 
 ```bash
-$ git clone git@github.com:LeeonardoVargas/fila-covid.git && cd fila-covid
+$ git clone git@github.com:LeeonardoVargas/fila-da-vacina.git && cd fila-da-vacina
 
 # Instalando as dependências
 $ yarn
@@ -51,7 +61,7 @@ Faça o `fork` e clone o projeto a partir do seu usuário.
 
 ```bash
 # Clonando projeto
-$ git clone https://github.com/SEU-NOME-DE-USUARIO/fila-covid.git
+$ git clone https://github.com/SEU-NOME-DE-USUARIO/fila-da-vacina.git
 
 # Criando um branch
 $ git branch minha-alteracao
