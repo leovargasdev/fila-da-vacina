@@ -5,12 +5,16 @@ import { Container } from './styles'
 export const Footer = () => (
   <Container>
     <h3>
-      © {new Date().getFullYear()}
+      {new Date().getFullYear()} © Desenvolvedor
       <a
         href="https://www.linkedin.com/in/leonardo-luis-de-vargas/"
         target="_new"
       >
         Leonardo Vargas
+      </a>{' '}
+      e Analista de Dados
+      <a href="https://www.instagram.com/taffarel787/" target="_new">
+        André Taffarel
       </a>
     </h3>
     <h4>

@@ -48,7 +48,10 @@ export const Container = styled.footer`
     width: 92%;
 
     h3 {
+      text-align: center;
+      line-height: 1;
       font-size: 1rem;
+      margin-bottom: 0.5rem;
     }
 
     h4 {
