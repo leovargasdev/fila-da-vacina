@@ -10,7 +10,7 @@
 
 ## 💻 Projeto
 
-Esse projeto tem como objetivo mostrar a posição do usuário na fila de vacinação da covid-19 forma clara e intuitiva, para determinar a posição é necessário responder um questionário, sendo ele:
+Apresentar ao usuário a sua etapa na fila da vacinação da Covid-19 de forma clara e intuitiva. Para isso é necessário responder um questionário com cinco perguntas, sendo elas:
 
 - Qual é a sua idade?
 - Qual sua área de atuação?
@@ -18,7 +18,9 @@ Esse projeto tem como objetivo mostrar a posição do usuário na fila de vacina
 - Você pertence a algum destes grupos?
 - Você é gestante?
 
-Ao responder as questões é apresentado a etapa da campanha que o usuário será vacinado. Tais informações foram retiradas do Plano Nacional de Vacinação contra a Covid-19 do Ministério da Saúde, [link do documento](plano-nacional-de-vacinacao.pdf).
+Ao finalizar o questionário o usuário é direcionado para informações sobre sua vacinação, etapa da campanha que será imunizado e para os detalhes de cada etapa. Essa aplicação foi desenvolvida de forma voluntária para o projeto Missão Chronos. Tais informações foram retiradas do Plano Nacional de Vacinação contra a Covid-19 do Ministério da Saúde, [link do documento](https://fila-da-vacina.projetochronos.com.br/plano-nacional-de-vacinacao.pdf).
+
+Já para a construção do layout, eu me inspirei em projetos encontrados no dribble e também na aplicação feita pelo G1.
 
 
 ### Conceitos abordados
