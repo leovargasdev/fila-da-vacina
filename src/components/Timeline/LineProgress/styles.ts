@@ -74,7 +74,7 @@ export const Container = styled.div<{ activePhase: number }>`
   `}
 `
 
-export const Phase = styled.div`
+export const Phase = styled.a`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -82,6 +82,14 @@ export const Phase = styled.div`
 
   flex: 1;
   z-index: 2;
+
+  cursor: auto;
+  text-decoration: none;
+
+  div:hover,
+  h5:hover {
+    cursor: pointer;
+  }
 
   &:nth-child(1) {
     animation: ${showPhase} 1.5s ease;
@@ -135,7 +143,7 @@ export const PhaseActive = styled.span`
   `}
 `
 
-export const PhaseIcon = styled.a<PhaseIconProps>`
+export const PhaseIcon = styled.div<PhaseIconProps>`
   display: flex;
 
   position: absolute;

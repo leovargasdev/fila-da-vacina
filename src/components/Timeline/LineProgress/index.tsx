@@ -12,14 +12,13 @@ interface LineProgressProps {
 export const LineProgress = ({ activePhase }: LineProgressProps) => (
   <Container activePhase={activePhase - 1}>
     {phases.map(phase => (
-      <Phase key={phase.id}>
+      <Phase key={phase.id} href={`#phase-${phase.id}`}>
         {phase.id === activePhase && (
           <PhaseActive>
             você está aqui <FaChevronDown />
           </PhaseActive>
         )}
         <PhaseIcon
-          href={`#phase-${phase.id}`}
           active={phase.id === activePhase}
           finished={phase.id < activePhase}
         >
