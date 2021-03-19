@@ -19,6 +19,7 @@ export const LineProgress = ({ activePhase }: LineProgressProps) => (
           </PhaseActive>
         )}
         <PhaseIcon
+          href={`#phase-${phase.id}`}
           active={phase.id === activePhase}
           finished={phase.id < activePhase}
         >

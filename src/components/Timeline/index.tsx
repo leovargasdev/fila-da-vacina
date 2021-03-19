@@ -23,7 +23,12 @@ export const Timeline = ({ activePhase }: TimelineProps) => (
     <LineProgress activePhase={activePhase} />
 
     {phases.map(phase => (
-      <Box key={phase.id} phaseNumber={phase.id} right={phase.id % 2 === 0}>
+      <Box
+        key={phase.id}
+        phaseNumber={phase.id}
+        right={phase.id % 2 === 0}
+        id={`phase-${phase.id + 1}`}
+      >
         <BoxIcon
           active={phase.id === activePhase}
           finished={phase.id < activePhase}

@@ -135,7 +135,7 @@ export const PhaseActive = styled.span`
   `}
 `
 
-export const PhaseIcon = styled.div<PhaseIconProps>`
+export const PhaseIcon = styled.a<PhaseIconProps>`
   display: flex;
 
   position: absolute;
