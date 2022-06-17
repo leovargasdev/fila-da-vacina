@@ -18,7 +18,7 @@ Apresentar ao usuário a sua etapa na fila da vacinação da Covid-19 de forma c
 - Você pertence a algum destes grupos?
 - Você é gestante?
 
-Ao finalizar o questionário o usuário é direcionado para informações sobre sua vacinação, etapa da campanha que será imunizado e para os detalhes de cada etapa. Essa aplicação foi desenvolvida de forma voluntária para o projeto Missão Chronos. Tais informações foram retiradas do Plano Nacional de Vacinação contra a Covid-19 do Ministério da Saúde, [link do documento](https://fila-da-vacina.projetochronos.com.br/plano-nacional-de-vacinacao.pdf).
+Ao finalizar o questionário o usuário é direcionado para informações sobre sua vacinação, etapa da campanha que será imunizado e para os detalhes de cada etapa. Essa aplicação foi desenvolvida de forma voluntária para o projeto Missão Chronos. Tais informações foram retiradas do Plano Nacional de Vacinação contra a Covid-19 do Ministério da Saúde, [link do documento](https://fila-da-vacina.leonardovargas.dev/plano-nacional-de-vacinacao.pdf).
 
 Já para a construção do layout, eu me inspirei em projetos encontrados no dribble e também na aplicação feita pelo G1.
 
@@ -48,7 +48,7 @@ Já para a construção do layout, eu me inspirei em projetos encontrados no dri
 Faça um clone desse repositório e acesse o diretório.
 
 ```bash
-$ git clone git@github.com:LeeonardoVargas/fila-da-vacina.git && cd fila-da-vacina
+$ git clone git@github.com:leovargasdev/fila-da-vacina.git && cd fila-da-vacina
 
 # Instalando as dependências
 $ yarn
